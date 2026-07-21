@@ -1,30 +1,20 @@
 # 信用卡核准預測：多模型比較與參數調校
 
 # 專案背景
-以信用卡申請者的資料建立一個二元分類模型，預測信用卡申請是否會被核准。本資料表包含15個客戶資料訊息欄(性別、年齡、婚姻狀態、是否為銀行客戶、教育程度、種族、工作年資、過去違約紀錄、是否在職、信用分數、駕照、公民身分、郵遞區號、收入)，以及1個核准與否的結果欄
+本專案使用 Kaggle 的信用卡申請資料集，建立二元分類模型，預測申請者的信用卡是否會被核准。資料包含申請者背景、財務與信用相關欄位，適合用來練習資料清理、特徵工程與模型比較
 
 # 資料來源
 Kaggle機器學習的公開資料庫 [LINK](https://www.kaggle.com/datasets/youssefaboelwafa/credit-card-approval)
 
 # 專案目的
-本專案希望透過一套完整機器學習流程，展示從一開始的資料清洗，直到最後建立模型並進行比較的結果
+本專案旨在建立一套可重複使用的機器學習流程，從資料清理、特徵工程到模型訓練與調參，並比較不同分類模型的表現
 
-# 處理流程
-1. 以pandas載入資料
-2. 原始資料看似沒有缺失值，是因為原始資料以"?"來表示，本專案採以mean填補數值欄位，以mode填補類別欄位
-3. 針對類別欄位進行One-hot encoding
-4. 確保train/test的資料對齊
-5. 以StandardScalar對資料進行標準化，使模型公平處理各項特徵
-6. 選用了Logistic Regression、Random Forest、KNN、SVM等四種模型
-7. 使用GridSearch進行參數調校  
-Logistic Regression：C, solver, max_iter  
-Random Forest：n_estimators, max_depth, max_features  
-KNN：n_neighbors, weights, metric  
-SVM：C, kernel, gamma
-
-
-
-
-
+# 專案結果
+| Model | CV Score | Accuracy Score |
+| -------- | -------- | -------- |
+| Logistic Regression   | 0.8514   | 0.7826   |
+| Random Forest   | 0.8749   | 0.8333   |
+| KNN   | 0.7935   | 0.7246   |
+| SVM   | 0.8459   | 0.746   |
 
 
