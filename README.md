@@ -4,17 +4,36 @@
 本專案使用 Kaggle 的信用卡申請資料集，建立二元分類模型，預測申請者的信用卡是否會被核准。資料包含申請者背景、財務與信用相關欄位，適合用來練習資料清理、特徵工程與模型比較
 
 # 資料來源
-Kaggle機器學習的公開資料庫 [LINK](https://www.kaggle.com/datasets/youssefaboelwafa/credit-card-approval)
+Kaggle 公開資料集：Credit Card Approval [LINK](https://www.kaggle.com/datasets/youssefaboelwafa/credit-card-approval)  
+資料有690筆，同時包含Continuous和Categorical的資料型態
 
 # 專案結構
-README.md：專案說明
-analysis.ipynb：完整分析流程
-data：原始資料
+專案說明：README.md  
+分析流程：analysis.ipynb  
+原始資料：cc_approvals.data
 
 # 專案目的
 本專案旨在建立一套可重複使用的機器學習流程，從資料清理、特徵工程到模型訓練與調參，並比較不同分類模型的表現
 
+# 環境與執行方式
++ Python 3.12
++ 主要套件 pandas、numpy、scikit-learn
++ 執行方式 analysis.ipynb
+
+# 前置處理
++ 將 ? 視為缺失值並補值
++ 類別欄位進行 one-hot encoding
++ 使用 StandardScaler 標準化特徵
++ 切分 train/test 資料集
+
+# 模型選擇動機
++ Logistic Regression：作為基準模型
++ Random Forest：處理非線性與特徵交互作用
++ KNN：作為距離式分類比較
++ SVM：測試邊界分類的效果
+
 # 專案結果
+Accuracy Score 用於判定預測的整體準確率，CV Score用於判定交叉驗證的表現，看模型是否穩定
 | Model | CV Score | Accuracy Score |
 | -------- | -------- | -------- |
 | Logistic Regression   | 0.8514   | 0.7826   |
@@ -22,4 +41,9 @@ data：原始資料
 | KNN   | 0.7935   | 0.7246   |
 | SVM   | 0.8459   | 0.7463   |
 
-以Accuracy而言，Random Forest的表現最好，在交叉驗證下也有穩定的表現，GridSearch之後還有再進一步提升準確度
+以 Accuracy 而言，Random Forest 表現最佳，且在交叉驗證下也維持穩定；經過 GridSearch 調參後，測試集準確率進一步提升，是所有模型裡面表現最佳的。SVM 和 Logistic Regression 在交叉驗證階段表現不錯，但整體的Accuracy不如預期，可見泛化的表現較為不足。
+
+# 預期專案可拓展方向
++ 加入Confusion Matrix、ROC Curve 與 F1-score
++ 嘗試更多特徵工程方法
++ 比較更多模型或使用 ensemble 方法
