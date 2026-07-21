@@ -6,6 +6,11 @@
 # 資料來源
 Kaggle機器學習的公開資料庫 [LINK](https://www.kaggle.com/datasets/youssefaboelwafa/credit-card-approval)
 
+# 專案結構
+README.md：專案說明
+analysis.ipynb：完整分析流程
+data：原始資料
+
 # 專案目的
 本專案旨在建立一套可重複使用的機器學習流程，從資料清理、特徵工程到模型訓練與調參，並比較不同分類模型的表現
 
@@ -17,4 +22,4 @@ Kaggle機器學習的公開資料庫 [LINK](https://www.kaggle.com/datasets/yous
 | KNN   | 0.7935   | 0.7246   |
 | SVM   | 0.8459   | 0.7463   |
 
-
+以Accuracy而言，Random Forest的表現最好，在交叉驗證下也有穩定的表現，GridSearch之後還有再進一步提升準確度
