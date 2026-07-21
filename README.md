@@ -5,7 +5,7 @@
 
 # 資料來源
 Kaggle 公開資料集：Credit Card Approval [LINK](https://www.kaggle.com/datasets/youssefaboelwafa/credit-card-approval)  
-資料有690筆，同時包含Continuous和Categorical的資料型態
+資料共 690 筆，包含數值型與類別型特徵，適合測試不同前處理與模型的表現
 
 # 專案結構
 專案說明：README.md  
@@ -31,9 +31,9 @@ Kaggle 公開資料集：Credit Card Approval [LINK](https://www.kaggle.com/data
 + Random Forest：處理非線性與特徵交互作用
 + KNN：作為距離式分類比較
 + SVM：測試邊界分類的效果
-
+  
 # 專案結果
-Accuracy Score 用於判定預測的整體準確率，CV Score用於判定交叉驗證的表現，看模型是否穩定
+Accuracy Score 用於判定預測的整體準確率，CV Score 用於評估模型在交叉驗證下的穩定性。下表為各模型在最佳參數搜尋後的測試結果：
 | Model | CV Score | Accuracy Score |
 | -------- | -------- | -------- |
 | Logistic Regression   | 0.8514   | 0.7826   |
@@ -41,7 +41,7 @@ Accuracy Score 用於判定預測的整體準確率，CV Score用於判定交叉
 | KNN   | 0.7935   | 0.7246   |
 | SVM   | 0.8459   | 0.7463   |
 
-以 Accuracy 而言，Random Forest 表現最佳，且在交叉驗證下也維持穩定；經過 GridSearch 調參後，測試集準確率進一步提升，是所有模型裡面表現最佳的。SVM 和 Logistic Regression 在交叉驗證階段表現不錯，但整體的Accuracy不如預期，可見泛化的表現較為不足。
+以 Accuracy 而言，Random Forest 表現最佳，且在交叉驗證下也維持穩定；經過 GridSearch 調參後，測試集準確率進一步提升，為本專案表現最佳的模型。SVM 與 Logistic Regression 在交叉驗證階段表現尚可，但測試集表現相對下降，顯示其泛化能力仍有提升空間
 
 # 預期專案可拓展方向
 + 加入Confusion Matrix、ROC Curve 與 F1-score
