@@ -17,9 +17,9 @@ Kaggle機器學習的公開資料庫
 5. 以StandardScalar對資料進行標準化，使模型公平處理各項特徵
 6. 選用了Logistic Regression、Random Forest、KNN、SVM等四種模型
 7. 使用GridSearch進行參數調校
-Logistic Regression：C, solver, max_iter
-Random Forest：n_estimators, max_depth, max_features
-KNN：n_neighbors, weights, metric
+Logistic Regression：C, solver, max_iter  
+Random Forest：n_estimators, max_depth, max_features  
+KNN：n_neighbors, weights, metric  
 SVM：C, kernel, gamma
 
 
