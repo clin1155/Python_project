@@ -13,8 +13,8 @@ Kaggle機器學習的公開資料庫 [LINK](https://www.kaggle.com/datasets/yous
 | Model | CV Score | Accuracy Score |
 | -------- | -------- | -------- |
 | Logistic Regression   | 0.8514   | 0.7826   |
-| Random Forest   | 0.8749   | 0.8333   |
+| Random Forest   | **0.8749**   | **0.8333**   |
 | KNN   | 0.7935   | 0.7246   |
-| SVM   | 0.8459   | 0.746   |
+| SVM   | 0.8459   | 0.7463   |
 
 
